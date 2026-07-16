@@ -644,6 +644,61 @@
       background: white;
     }
 
+    .contact-text {
+      max-width: 900px;
+    }
+
+    .contact-text h2 {
+      max-width: 900px;
+    }
+
+    .contact-description {
+      max-width: 880px;
+      font-size: 1rem;
+    }
+
+    .contact-information {
+      margin-top: 14px;
+      font-size: 0.96rem;
+    }
+
+    .contact-information a {
+      color: white;
+      text-decoration: none;
+    }
+
+    .contact-information a:hover {
+      text-decoration: underline;
+    }
+
+    .contact-actions {
+      min-width: 205px;
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      gap: 14px;
+    }
+
+    .contact-banner .contact-btn {
+      min-height: 54px;
+      padding: 0 22px;
+      white-space: nowrap;
+      color: var(--navy);
+      background: white;
+      border: 2px solid white;
+    }
+
+    .contact-banner .contact-btn-outline {
+      color: white;
+      background: transparent;
+      border: 2px solid rgba(255, 255, 255, 0.92);
+    }
+
+    .contact-banner .contact-btn-outline:hover {
+      color: var(--navy);
+      background: white;
+    }
+
     footer {
       padding: 30px 0 42px;
       text-align: center;
@@ -756,6 +811,15 @@
         grid-template-columns: 1fr;
       }
 
+      .contact-actions {
+        width: 100%;
+        min-width: 0;
+      }
+
+      .contact-actions .btn {
+        width: 100%;
+      }
+
       .info-item {
         grid-template-columns: 1fr;
         gap: 2px;
@@ -857,7 +921,7 @@
 
               <div class="info-item">
                 <div class="info-label">職稱</div>
-                <div class="info-value">助理教授／智慧機械與伺服控制研究室負責人</div>
+                <div class="info-value">副教授／智慧機械與伺服控制研究室負責人</div>
               </div>
 
               <div class="info-item">
@@ -1087,12 +1151,42 @@
     <section id="contact">
       <div class="container">
         <div class="contact-banner">
-          <div>
-            <h2>歡迎對智慧機械、控制與機器人研究有興趣的同學加入</h2>
-            <p>國立虎尾科技大學 電機館 212｜wei@gm.nfu.edu.tw</p>
+          <div class="contact-text">
+            <h2>歡迎有興趣的同學、企業與合作夥伴與我們聯繫</h2>
+
+            <p class="contact-description">
+              欲洽談產學合作、技術服務、研究計畫或技術交流的企業與機構，
+              請填寫合作聯絡表單；有意加入研究室、參與專題研究、競賽或研究計畫的同學，
+              請填寫學生加入表單，我們將於收到資料後與您聯繫。
+            </p>
+
+            <p class="contact-information">
+              國立虎尾科技大學 電機館 212｜
+              <a href="mailto:wei@gm.nfu.edu.tw">wei@gm.nfu.edu.tw</a>
+            </p>
           </div>
 
-          <a class="btn" href="mailto:wei@gm.nfu.edu.tw">寄送電子郵件</a>
+          <div class="contact-actions">
+            <a
+              class="btn contact-btn"
+              href="https://docs.google.com/forms/d/e/1FAIpQLSd-IERCCMwaPops-UzbSNmX76l3GNTMjONq-T39Xw5YAo0H6Q/viewform"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="開啟企業與機構合作聯絡表單"
+            >
+              合作聯絡請按這
+            </a>
+
+            <a
+              class="btn contact-btn contact-btn-outline"
+              href="https://docs.google.com/forms/d/e/1FAIpQLScR14Nsi5rNc0YR_bxI_AlqvsC7k1u_L7fZ__Lrex52iiDsrA/viewform"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="開啟學生加入研究室表單"
+            >
+              同學加入請按這
+            </a>
+          </div>
         </div>
       </div>
     </section>
