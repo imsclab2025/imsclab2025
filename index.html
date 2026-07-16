@@ -1,0 +1,1119 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="智慧機械與伺服控制研究室－教授介紹、研究方向、研究項目與實驗室成果。">
+  <title>智慧機械與伺服控制研究室</title>
+
+  <style>
+    :root {
+      --navy: #12395d;
+      --blue: #246ea9;
+      --blue-light: #eaf4fd;
+      --orange: #f27752;
+      --gold: #efb64b;
+      --ink: #1e2b38;
+      --muted: #627284;
+      --line: #dce6ef;
+      --surface: #ffffff;
+      --bg: #f4f7fb;
+      --shadow: 0 18px 45px rgba(22, 54, 82, 0.10);
+      --radius: 22px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 88px;
+    }
+
+    body {
+      font-family: "Noto Sans TC", "Microsoft JhengHei", Arial, sans-serif;
+      color: var(--ink);
+      background: var(--bg);
+      line-height: 1.75;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      width: min(1160px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      position: fixed;
+      inset: 0 0 auto 0;
+      z-index: 1000;
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(220, 230, 239, 0.9);
+    }
+
+    .nav {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      font-weight: 900;
+      color: var(--navy);
+      letter-spacing: 0.02em;
+    }
+
+    .brand-mark {
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      border-radius: 13px;
+      color: white;
+      background: linear-gradient(135deg, var(--navy), var(--blue));
+      box-shadow: 0 10px 22px rgba(36, 110, 169, 0.25);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #42566a;
+      font-weight: 700;
+      font-size: 0.94rem;
+    }
+
+    .nav-links a:hover {
+      color: var(--blue);
+    }
+
+    .hero {
+      min-height: 720px;
+      padding: 150px 0 90px;
+      display: grid;
+      align-items: center;
+      background:
+        linear-gradient(90deg, rgba(244,247,251,0.98), rgba(244,247,251,0.76)),
+        url("assets/network-bg.svg") center / cover no-repeat;
+      overflow: hidden;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 64px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 18px;
+      padding: 7px 13px;
+      border-radius: 999px;
+      background: #fff1ec;
+      color: var(--orange);
+      font-size: 0.9rem;
+      font-weight: 900;
+    }
+
+    .hero h1 {
+      max-width: 760px;
+      font-size: clamp(2.7rem, 6vw, 5.2rem);
+      line-height: 1.08;
+      letter-spacing: -0.035em;
+      color: var(--navy);
+    }
+
+    .hero h1 span {
+      color: var(--blue);
+    }
+
+    .hero-lead {
+      max-width: 690px;
+      margin-top: 24px;
+      color: var(--muted);
+      font-size: 1.15rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 32px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      min-height: 48px;
+      padding: 0 20px;
+      border-radius: 13px;
+      border: 1px solid transparent;
+      text-decoration: none;
+      font-weight: 900;
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-primary {
+      color: white;
+      background: linear-gradient(135deg, var(--navy), var(--blue));
+      box-shadow: 0 12px 28px rgba(36, 110, 169, .25);
+    }
+
+    .btn-secondary {
+      color: var(--navy);
+      background: white;
+      border-color: var(--line);
+    }
+
+    .hero-panel {
+      position: relative;
+      min-height: 460px;
+    }
+
+    .hero-card {
+      position: absolute;
+      inset: 20px 0 0 40px;
+      padding: 32px;
+      border-radius: 30px;
+      background: rgba(255,255,255,.92);
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(255,255,255,.9);
+    }
+
+    .hero-card::before {
+      content: "";
+      position: absolute;
+      width: 130px;
+      height: 130px;
+      top: -26px;
+      right: -25px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, rgba(242,119,82,.28), rgba(239,182,75,.14));
+      filter: blur(1px);
+    }
+
+    .portrait-wrap {
+      width: 230px;
+      margin: 0 auto 22px;
+      border-radius: 24px;
+      overflow: hidden;
+      background: var(--blue-light);
+      box-shadow: 0 16px 30px rgba(26, 67, 101, 0.16);
+    }
+
+    .hero-name {
+      text-align: center;
+      color: var(--navy);
+      font-size: 1.6rem;
+      font-weight: 900;
+    }
+
+    .hero-role {
+      text-align: center;
+      color: var(--muted);
+      margin-top: 4px;
+    }
+
+    .quick-tags {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 20px;
+    }
+
+    .quick-tags span {
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: var(--blue-light);
+      color: var(--blue);
+      font-size: .82rem;
+      font-weight: 800;
+    }
+
+    section {
+      padding: 92px 0;
+    }
+
+    .section-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 28px;
+      margin-bottom: 38px;
+    }
+
+    .section-kicker {
+      color: var(--orange);
+      font-size: .88rem;
+      font-weight: 900;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+
+    .section-title {
+      margin-top: 6px;
+      color: var(--navy);
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      line-height: 1.2;
+    }
+
+    .section-note {
+      max-width: 520px;
+      color: var(--muted);
+    }
+
+    .profile-grid {
+      display: grid;
+      grid-template-columns: .82fr 1.18fr;
+      gap: 28px;
+      align-items: stretch;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: 0 12px 32px rgba(19, 57, 93, 0.065);
+    }
+
+    .profile-card {
+      padding: 30px;
+    }
+
+    .profile-card h3,
+    .bio-card h3 {
+      color: var(--navy);
+      font-size: 1.35rem;
+      margin-bottom: 18px;
+    }
+
+    .info-list {
+      display: grid;
+      gap: 15px;
+    }
+
+    .info-item {
+      display: grid;
+      grid-template-columns: 104px 1fr;
+      gap: 10px;
+      padding-bottom: 13px;
+      border-bottom: 1px dashed var(--line);
+    }
+
+    .info-item:last-child {
+      border-bottom: none;
+    }
+
+    .info-label {
+      color: var(--muted);
+      font-weight: 800;
+    }
+
+    .info-value {
+      font-weight: 800;
+      word-break: break-word;
+    }
+
+    .info-value a {
+      color: var(--blue);
+    }
+
+    .bio-card {
+      padding: 34px;
+    }
+
+    .bio-card p {
+      color: #445669;
+      text-align: justify;
+    }
+
+    .expertise {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+      margin-top: 26px;
+    }
+
+    .expertise-item {
+      padding: 18px;
+      border-radius: 16px;
+      background: linear-gradient(135deg, #f8fbfe, #edf6fd);
+      border: 1px solid #dbeaf6;
+    }
+
+    .expertise-item strong {
+      display: block;
+      color: var(--navy);
+      margin-bottom: 4px;
+    }
+
+    .research-section {
+      background: #eef4f9;
+    }
+
+    .research-layout {
+      display: grid;
+      grid-template-columns: 1.02fr .98fr;
+      gap: 32px;
+      align-items: center;
+    }
+
+    .research-wheel-card {
+      padding: 34px;
+    }
+
+    .research-wheel-wrap {
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      gap: 28px;
+      align-items: center;
+    }
+
+    .research-wheel {
+      width: 250px;
+      aspect-ratio: 1;
+      border-radius: 50%;
+      background:
+        conic-gradient(
+          #244f79 0deg 70deg,
+          #ad7c53 70deg 145deg,
+          #8f5549 145deg 220deg,
+          #604270 220deg 292deg,
+          #568274 292deg 360deg
+        );
+      box-shadow:
+        inset -18px -18px 28px rgba(0,0,0,.12),
+        0 20px 40px rgba(29, 64, 92, .18);
+      position: relative;
+    }
+
+    .research-wheel::after {
+      content: "Research";
+      position: absolute;
+      inset: 67px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      color: var(--navy);
+      background: white;
+      font-weight: 900;
+      box-shadow: inset 0 0 0 1px var(--line);
+    }
+
+    .legend {
+      display: grid;
+      gap: 10px;
+    }
+
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: #445669;
+      font-weight: 750;
+    }
+
+    .legend-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      flex: 0 0 auto;
+    }
+
+    .topic-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+    }
+
+    .topic-card {
+      min-height: 132px;
+      padding: 20px;
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 17px;
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+
+    .topic-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 14px 30px rgba(30, 73, 108, .10);
+    }
+
+    .topic-icon {
+      width: 38px;
+      height: 38px;
+      display: grid;
+      place-items: center;
+      margin-bottom: 11px;
+      border-radius: 12px;
+      background: var(--blue-light);
+      color: var(--blue);
+      font-size: 1.1rem;
+    }
+
+    .topic-card h3 {
+      color: var(--navy);
+      font-size: 1rem;
+    }
+
+    .topic-card p {
+      margin-top: 4px;
+      color: var(--muted);
+      font-size: .88rem;
+    }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .project-card {
+      padding: 26px;
+    }
+
+    .project-card h3 {
+      color: var(--navy);
+      margin-bottom: 14px;
+    }
+
+    .clean-list {
+      display: grid;
+      gap: 10px;
+      list-style: none;
+    }
+
+    .clean-list li {
+      position: relative;
+      padding-left: 20px;
+      color: #4b5e70;
+    }
+
+    .clean-list li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: .72em;
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--orange);
+    }
+
+    .honor-card {
+      margin-top: 22px;
+      padding: 30px;
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: 26px;
+      align-items: center;
+      background: linear-gradient(135deg, #143e65, #246ea9);
+      color: white;
+      border: none;
+    }
+
+    .honor-card h3 {
+      font-size: 1.8rem;
+    }
+
+    .honor-list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px 24px;
+      list-style: none;
+    }
+
+    .honor-list li {
+      position: relative;
+      padding-left: 22px;
+    }
+
+    .honor-list li::before {
+      content: "★";
+      position: absolute;
+      left: 0;
+      color: #ffd471;
+    }
+
+    .applications {
+      background:
+        linear-gradient(rgba(255,255,255,.92), rgba(255,255,255,.92)),
+        url("assets/network-bg.svg") center / cover no-repeat;
+    }
+
+    .application-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .application-group {
+      padding: 28px;
+    }
+
+    .application-group h3 {
+      color: var(--navy);
+      margin-bottom: 18px;
+      font-size: 1.25rem;
+    }
+
+    .application-items {
+      display: grid;
+      gap: 12px;
+    }
+
+    .application-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 13px 14px;
+      border-radius: 13px;
+      background: #f7fafc;
+      border: 1px solid #e4ecf3;
+      color: #405366;
+      font-weight: 800;
+    }
+
+    .application-item span:first-child {
+      width: 34px;
+      height: 34px;
+      display: grid;
+      place-items: center;
+      border-radius: 10px;
+      color: var(--blue);
+      background: var(--blue-light);
+    }
+
+    .contact-banner {
+      padding: 50px;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      gap: 26px;
+      border-radius: 28px;
+      color: white;
+      background: linear-gradient(135deg, var(--navy), #1f79b8);
+      box-shadow: var(--shadow);
+    }
+
+    .contact-banner h2 {
+      font-size: clamp(1.8rem, 4vw, 3rem);
+      line-height: 1.25;
+    }
+
+    .contact-banner p {
+      margin-top: 10px;
+      color: rgba(255,255,255,.82);
+    }
+
+    .contact-banner .btn {
+      color: var(--navy);
+      background: white;
+    }
+
+    footer {
+      padding: 30px 0 42px;
+      text-align: center;
+      color: #718092;
+      font-size: .9rem;
+    }
+
+    .mobile-menu {
+      display: none;
+      border: none;
+      background: transparent;
+      font-size: 1.5rem;
+      color: var(--navy);
+      cursor: pointer;
+    }
+
+    @media (max-width: 980px) {
+      .hero-grid,
+      .profile-grid,
+      .research-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        min-height: auto;
+      }
+
+      .hero-panel {
+        min-height: 430px;
+      }
+
+      .hero-card {
+        inset: 0;
+        max-width: 520px;
+      }
+
+      .project-grid,
+      .application-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .honor-card {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 740px) {
+      .container {
+        width: min(100% - 26px, 1160px);
+      }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 76px;
+        left: 13px;
+        right: 13px;
+        padding: 18px;
+        flex-direction: column;
+        align-items: stretch;
+        border-radius: 16px;
+        background: white;
+        box-shadow: var(--shadow);
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .mobile-menu {
+        display: block;
+      }
+
+      .hero {
+        padding-top: 122px;
+      }
+
+      .hero-grid {
+        gap: 38px;
+      }
+
+      .hero-panel {
+        min-height: 420px;
+      }
+
+      .hero-card {
+        padding: 24px;
+      }
+
+      .section-head {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .research-wheel-wrap {
+        grid-template-columns: 1fr;
+        justify-items: center;
+      }
+
+      .topic-grid,
+      .project-grid,
+      .application-grid,
+      .honor-list,
+      .expertise {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-banner {
+        padding: 34px 26px;
+        grid-template-columns: 1fr;
+      }
+
+      .info-item {
+        grid-template-columns: 1fr;
+        gap: 2px;
+      }
+    }
+
+    @media (max-width: 420px) {
+      .hero-panel {
+        min-height: 450px;
+      }
+
+      .portrait-wrap {
+        width: 190px;
+      }
+
+      .research-wheel {
+        width: 210px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="topbar">
+    <div class="container nav">
+      <a class="brand" href="#home">
+        <span class="brand-mark">SM</span>
+        <span>智慧機械與伺服控制研究室</span>
+      </a>
+
+      <button class="mobile-menu" aria-label="開啟選單" onclick="toggleMenu()">☰</button>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="#professor">教授介紹</a>
+        <a href="#research">研究方向</a>
+        <a href="#projects">研究項目</a>
+        <a href="#applications">應用領域</a>
+        <a href="#contact">聯絡方式</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div>
+          <span class="eyebrow">🤖 Smart Machinery & Servo Control Lab</span>
+          <h1>智慧機械與<br><span>伺服控制研究室</span></h1>
+          <p class="hero-lead">
+            研究涵蓋系統控制、電力電能處理、電動機驅動、嵌入式系統、
+            機電整合、機器人與人工智慧應用，致力於研究成果落地與產學合作。
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#research">探索研究方向</a>
+            <a class="btn btn-secondary" href="mailto:wei@gm.nfu.edu.tw">聯絡研究室</a>
+          </div>
+        </div>
+
+        <div class="hero-panel">
+          <article class="hero-card">
+            <div class="portrait-wrap">
+              <img src="assets/professor.png" alt="魏銘彥博士個人照片">
+            </div>
+            <div class="hero-name">魏銘彥 博士</div>
+            <div class="hero-role">助理教授／研究室負責人</div>
+            <div class="quick-tags">
+              <span>System Control</span>
+              <span>Robotics</span>
+              <span>AI Applications</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="professor">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="section-kicker">Professor</div>
+            <h2 class="section-title">指導教授</h2>
+          </div>
+          <p class="section-note">
+            研究室重視理論基礎、系統實作及跨領域整合，並持續推動學術研究、
+            專題競賽與產學合作。
+          </p>
+        </div>
+
+        <div class="profile-grid">
+          <article class="card profile-card">
+            <h3>基本資料</h3>
+
+            <div class="info-list">
+              <div class="info-item">
+                <div class="info-label">姓名</div>
+                <div class="info-value">魏銘彥 博士</div>
+              </div>
+
+              <div class="info-item">
+                <div class="info-label">職稱</div>
+                <div class="info-value">助理教授／智慧機械與伺服控制研究室負責人</div>
+              </div>
+
+              <div class="info-item">
+                <div class="info-label">聯絡信箱</div>
+                <div class="info-value">
+                  <a href="mailto:wei@gm.nfu.edu.tw">wei@gm.nfu.edu.tw</a>
+                </div>
+              </div>
+
+              <div class="info-item">
+                <div class="info-label">辦公室</div>
+                <div class="info-value">國立虎尾科技大學 電機館 212</div>
+              </div>
+            </div>
+          </article>
+
+          <article class="card bio-card">
+            <h3>教授的話</h3>
+            <p>
+              魏銘彥博士現任國立虎尾科技大學電機工程系助理教授，並創立智慧機械與
+              伺服控制研究室。研究專長包含電動機驅動控制、嵌入式系統、機電整合及
+              人工智慧應用。魏博士畢業於國立臺灣科技大學電機工程博士班，具備多年
+              研究機構研發經驗，並積極參與國科會專題計畫與產學合作。
+              近年來持續投入學術研究與技術應用，發表多篇研究論文，並指導學生參與
+              研討會、機器人及專題創新競賽。研究室秉持務實與創新的精神，與企業密切
+              合作，致力於技術應用與人才培育，誠摯歡迎有志於研發與創新的人士加入。
+            </p>
+
+            <div class="expertise">
+              <div class="expertise-item">
+                <strong>系統控制</strong>
+                <span>System Control</span>
+              </div>
+              <div class="expertise-item">
+                <strong>電力電能處理</strong>
+                <span>Power and Energy Processing</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="research-section" id="research">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="section-kicker">Research Directions</div>
+            <h2 class="section-title">研究方向</h2>
+          </div>
+          <p class="section-note">
+            從控制理論、驅動電路與嵌入式系統出發，延伸至智慧機械、
+            機器人、自動化設備與人工智慧應用。
+          </p>
+        </div>
+
+        <div class="research-layout">
+          <article class="card research-wheel-card">
+            <div class="research-wheel-wrap">
+              <div class="research-wheel" aria-label="研究領域分布示意圖"></div>
+
+              <div class="legend">
+                <div class="legend-item"><span class="legend-dot" style="background:#244f79"></span>智慧控制</div>
+                <div class="legend-item"><span class="legend-dot" style="background:#ad7c53"></span>機電系統</div>
+                <div class="legend-item"><span class="legend-dot" style="background:#8f5549"></span>電源與驅動</div>
+                <div class="legend-item"><span class="legend-dot" style="background:#604270"></span>嵌入式控制</div>
+                <div class="legend-item"><span class="legend-dot" style="background:#568274"></span>人工智慧</div>
+              </div>
+            </div>
+          </article>
+
+          <div class="topic-grid">
+            <article class="topic-card">
+              <div class="topic-icon">⚙</div>
+              <h3>電動機驅動</h3>
+              <p>Motor Device Control</p>
+            </article>
+
+            <article class="topic-card">
+              <div class="topic-icon">▣</div>
+              <h3>嵌入式系統</h3>
+              <p>Embedded System</p>
+            </article>
+
+            <article class="topic-card">
+              <div class="topic-icon">∿</div>
+              <h3>控制理論發展</h3>
+              <p>Control Theory Application</p>
+            </article>
+
+            <article class="topic-card">
+              <div class="topic-icon">⌘</div>
+              <h3>機電整合</h3>
+              <p>Mechatronics</p>
+            </article>
+
+            <article class="topic-card">
+              <div class="topic-icon">🤖</div>
+              <h3>機器人學</h3>
+              <p>Robotics</p>
+            </article>
+
+            <article class="topic-card">
+              <div class="topic-icon">AI</div>
+              <h3>人工智慧應用</h3>
+              <p>AI Applications</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="section-kicker">Research Projects</div>
+            <h2 class="section-title">研究計畫與項目</h2>
+          </div>
+          <p class="section-note">
+            研究室參與國科會研究計畫、產學合作計畫與大專學生專題研究計畫，
+            並培養學生完成系統設計與實作驗證。
+          </p>
+        </div>
+
+        <div class="project-grid">
+          <article class="card project-card">
+            <h3>研究主題</h3>
+            <ul class="clean-list">
+              <li>電動代步車</li>
+              <li>人工智慧應用</li>
+              <li>機械手臂控制</li>
+              <li>起落架收放裝置</li>
+              <li>方向儀系統</li>
+              <li>無人車相關主題</li>
+              <li>交、直流馬達驅動器設計</li>
+            </ul>
+          </article>
+
+          <article class="card project-card">
+            <h3>研究項目</h3>
+            <ul class="clean-list">
+              <li>人工智慧</li>
+              <li>智慧型控制</li>
+              <li>非線性控制</li>
+              <li>控制晶片設計</li>
+              <li>機電系統控制</li>
+              <li>電源管理系統</li>
+              <li>狀態估測器設計</li>
+              <li>多軸馬達控制技術</li>
+              <li>馬達驅動控制電路設計</li>
+              <li>數位通訊與網路通訊協定</li>
+            </ul>
+          </article>
+
+          <article class="card project-card">
+            <h3>控制器設計平台</h3>
+            <ul class="clean-list">
+              <li>樹莓派</li>
+              <li>運動控制卡</li>
+              <li>數位訊號處理器</li>
+              <li>可編程邏輯控制器</li>
+              <li>現場可程式化邏輯閘陣列</li>
+            </ul>
+          </article>
+        </div>
+
+        <article class="card honor-card">
+          <div>
+            <div style="font-size:2.4rem;margin-bottom:8px">🏆</div>
+            <h3>實驗室榮譽</h3>
+          </div>
+
+          <ul class="honor-list">
+            <li>學生論文競賽佳作</li>
+            <li>工業機器人競賽第 2 名</li>
+            <li>臺灣智慧型機器人大賽第 1 名</li>
+            <li>中國機械工程學會全國學術研討會成果</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="applications" id="applications">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="section-kicker">Applications</div>
+            <h2 class="section-title">研究應用領域</h2>
+          </div>
+          <p class="section-note">
+            研究成果可應用於工業自動化、能源、國防、智慧系統、
+            電腦視覺及航太無人載具等領域。
+          </p>
+        </div>
+
+        <div class="application-grid">
+          <article class="card application-group">
+            <h3>工業</h3>
+            <div class="application-items">
+              <div class="application-item"><span>⚔</span><span>軍事國防</span></div>
+              <div class="application-item"><span>◉</span><span>能源開發</span></div>
+              <div class="application-item"><span>⚙</span><span>自動化機械</span></div>
+            </div>
+          </article>
+
+          <article class="card application-group">
+            <h3>資訊電資</h3>
+            <div class="application-items">
+              <div class="application-item"><span>AI</span><span>人工智慧</span></div>
+              <div class="application-item"><span>◉</span><span>電腦視覺</span></div>
+            </div>
+          </article>
+
+          <article class="card application-group">
+            <h3>航太機械</h3>
+            <div class="application-items">
+              <div class="application-item"><span>✈</span><span>無人機</span></div>
+              <div class="application-item"><span>⬡</span><span>無人載具系統</span></div>
+              <div class="application-item"><span>↗</span><span>導航與控制</span></div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="contact-banner">
+          <div>
+            <h2>歡迎對智慧機械、控制與機器人研究有興趣的同學加入</h2>
+            <p>國立虎尾科技大學 電機館 212｜wei@gm.nfu.edu.tw</p>
+          </div>
+
+          <a class="btn" href="mailto:wei@gm.nfu.edu.tw">寄送電子郵件</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      © 2026 智慧機械與伺服控制研究室．Smart Machinery & Servo Control Laboratory
+    </div>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById("navLinks").classList.toggle("open");
+    }
+
+    document.querySelectorAll("#navLinks a").forEach(function(link) {
+      link.addEventListener("click", function() {
+        document.getElementById("navLinks").classList.remove("open");
+      });
+    });
+  </script>
+</body>
+</html>
