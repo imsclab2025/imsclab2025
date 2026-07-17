@@ -198,12 +198,14 @@
 
     .hero-panel {
       position: relative;
-      min-height: 460px;
+      display: flex;
+      align-items: flex-start;
     }
 
     .hero-card {
-      position: absolute;
-      inset: 20px 0 0 40px;
+      position: relative;
+      width: calc(100% - 40px);
+      margin: 20px 0 0 40px;
       padding: 32px;
       border-radius: 30px;
       background: rgba(255,255,255,.92);
@@ -224,7 +226,8 @@
     }
 
     .portrait-wrap {
-      width: 230px;
+      width: 270px;
+      max-width: 100%;
       aspect-ratio: 4 / 5;
       margin: 0 auto 22px;
       border-radius: 24px;
@@ -735,12 +738,13 @@
       }
 
       .hero-panel {
-        min-height: 430px;
+        min-height: 0;
       }
 
       .hero-card {
-        inset: 0;
+        width: 100%;
         max-width: 520px;
+        margin: 0;
       }
 
       .project-grid,
@@ -789,10 +793,12 @@
       }
 
       .hero-panel {
-        min-height: 420px;
+        min-height: 0;
       }
 
       .hero-card {
+        width: 100%;
+        margin: 0;
         padding: 24px;
       }
 
@@ -836,11 +842,11 @@
 
     @media (max-width: 420px) {
       .hero-panel {
-        min-height: 450px;
+        min-height: 0;
       }
 
       .portrait-wrap {
-        width: 190px;
+        width: 230px;
       }
 
       .research-wheel {
