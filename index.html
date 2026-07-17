@@ -228,19 +228,17 @@
     .portrait-wrap {
       width: 270px;
       max-width: 100%;
-      aspect-ratio: 4 / 5;
       margin: 0 auto 22px;
       border-radius: 24px;
       overflow: hidden;
-      background: var(--blue-light);
+      background: white;
       box-shadow: 0 16px 30px rgba(26, 67, 101, 0.16);
     }
 
     .portrait-wrap img {
       width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center center;
+      height: auto;
+      display: block;
     }
 
     .hero-name {
@@ -896,7 +894,7 @@
         <div class="hero-panel">
           <article class="hero-card">
             <div class="portrait-wrap">
-              <img src="assets/professor.jpg" alt="魏銘彥博士個人照片" width="800" height="1000" decoding="async">
+              <img src="assets/professor.jpg" alt="魏銘彥博士個人照片" decoding="async">
             </div>
             <div class="hero-name">魏銘彥 博士</div>
             <div class="hero-role">副教授／研究室負責人</div>
