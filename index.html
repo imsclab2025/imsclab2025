@@ -416,11 +416,20 @@
     .edu-item,
     .exp-item {
       display: grid;
-      grid-template-columns: 120px 1fr;
-      gap: 16px;
+      gap: 18px;
       align-items: start;
       padding-bottom: 14px;
       border-bottom: 1px dashed var(--line);
+    }
+
+    /* 學歷年份較短，120px 即可 */
+    .edu-item {
+      grid-template-columns: 120px 1fr;
+    }
+
+    /* 經歷日期較長，欄位加寬避免日期與學校名稱擠在一起 */
+    .exp-item {
+      grid-template-columns: 155px 1fr;
     }
 
     .edu-item:last-child,
@@ -903,6 +912,16 @@
         grid-template-columns: 1fr;
         gap: 2px;
       }
+
+      .edu-item,
+      .exp-item {
+        grid-template-columns: 1fr;
+        gap: 4px;
+      }
+
+      .year {
+        margin-bottom: 2px;
+      }
     }
 
     @media (max-width: 420px) {
@@ -1056,10 +1075,6 @@
             <div class="section-kicker">Education & Experience</div>
             <h2 class="section-title">學歷與經歷</h2>
           </div>
-          <p class="section-note edu-exp-note">
-            彙整指導教授之學歷背景與歷年工作經歷，使頁面資訊層級更完整，
-            同時延續上方卡片式版面與雙欄排列的一致風格。
-          </p>
         </div>
 
         <div class="profile-grid edu-exp-grid">
