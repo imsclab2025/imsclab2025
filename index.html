@@ -74,7 +74,7 @@
     .brand {
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 11px;
       text-decoration: none;
       font-weight: 900;
       color: var(--navy);
@@ -82,14 +82,34 @@
     }
 
     .brand-mark {
-      width: 42px;
-      height: 42px;
-      display: grid;
-      place-items: center;
-      border-radius: 13px;
+      width: 50px;
+      height: 50px;
+      flex: 0 0 50px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      border-radius: 14px;
       color: white;
       background: linear-gradient(135deg, var(--navy), var(--blue));
       box-shadow: 0 10px 22px rgba(36, 110, 169, 0.25);
+      font-size: 0.78rem;
+      font-weight: 900;
+      line-height: 1.05;
+      text-align: center;
+      letter-spacing: 0;
+      white-space: normal;
+    }
+
+    .brand-mark .brand-mark-top,
+    .brand-mark .brand-mark-bottom {
+      display: block;
+    }
+
+    .brand-mark .brand-mark-bottom {
+      margin-top: 2px;
+      font-size: 0.66rem;
+      opacity: 0.95;
     }
 
     .nav-links {
@@ -987,7 +1007,10 @@
   <header class="topbar">
     <div class="container nav">
       <a class="brand" href="#home">
-        <span class="brand-mark">IMSC LAB</span>
+        <span class="brand-mark">
+          <span class="brand-mark-top">IMSC</span>
+          <span class="brand-mark-bottom">LAB</span>
+        </span>
         <span>智慧機械與伺服控制研究室</span>
       </a>
       <button class="mobile-menu" aria-label="開啟選單" onclick="toggleMenu()">☰</button>
