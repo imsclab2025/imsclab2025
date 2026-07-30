@@ -722,11 +722,11 @@
       background: var(--blue-light);
     }
 
-    .equipments {
+    .equipment {
       background: #f4f7fb;
     }
 
-    .equipments .section-head {
+    .equipment .section-head {
       margin-bottom: 22px;
     }
 
@@ -1066,7 +1066,7 @@
         <a href="#projects">主題項目</a>
         <a href="#applications">應用領域</a>
         <a href="#students">實驗室成員</a>
-        <a href="#equipments">實驗設備</a>
+        <a href="#equipment">實驗設備</a>
         <a href="#contact">聯絡方式</a>
       </nav>
     </div>
@@ -1542,16 +1542,16 @@
   </div>
 </section>
 
-<section class="equipments" id="equipments">
+<section class="equipment" id="equipment">
   <div class="container">
     <div class="section-head">
       <div>
-        <div class="section-kicker">equipments</div>
+        <div class="section-kicker">equipment</div>
         <h2 class="section-title">實驗設備</h2>
       </div>
 
       <p class="section-note">
-        本實驗室實驗用硬體、設備與系統。
+        本實驗室研究所使用之硬體、儀器及實驗系統。
       </p>
     </div>
     <div class="equipment-grid">
