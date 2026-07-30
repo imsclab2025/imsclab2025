@@ -722,7 +722,48 @@
       background: var(--blue-light);
     }
 
+    .equipments {
+      background: #f4f7fb;
+    }
 
+    .equipments .section-head {
+      margin-bottom: 22px;
+    }
+
+    .equipment-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .equipment-group {
+      padding: 22px 24px;
+      border-radius: 22px;
+    }
+
+    .equipment-group h3 {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 10px;
+      color: var(--navy);
+      font-size: 1.08rem;
+    }
+
+    .equipment-keywords {
+      margin: 0;
+      color: #4c5f72;
+      font-size: 0.97rem;
+      line-height: 1.8;
+    }
+
+    .equipment-keywords strong {
+      display: inline-block;
+      margin-bottom: 4px;
+      color: var(--navy);
+    }
+
+    
     .students {
       background: #f4f7fb;
     }
@@ -956,6 +997,9 @@
       .student-grid {
         grid-template-columns: 1fr;
       }
+      .equipment-grid {
+        grid-template-columns: 1fr;
+      }
 
       .contact-banner {
         padding: 34px 26px;
@@ -1022,6 +1066,7 @@
         <a href="#projects">主題項目</a>
         <a href="#applications">應用領域</a>
         <a href="#students">實驗室成員</a>
+        <a href="#equipments">實驗設備</a>
         <a href="#contact">聯絡方式</a>
       </nav>
     </div>
@@ -1489,6 +1534,93 @@
       <article class="card student-group">
         <h3>👨 蘇同學</h3>
         <p class="student-keywords">
+          <strong>研究關鍵字：</strong><br>
+          電動載具、SOC、SOH、RUL、儲能系統、FPGA
+        </p>
+      </article> 
+    </div>
+  </div>
+</section>
+
+<section class="equipments" id="equipments">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <div class="section-kicker">equipments</div>
+        <h2 class="section-title">實驗室成員</h2>
+      </div>
+
+      <p class="section-note">
+        本實驗室歷屆碩士成員。
+      </p>
+    </div>
+    <div class="equipment-grid">
+      <article class="card equipment-group">
+        <h3>👨 蔡同學</h3>
+        <p class="equipment-keywords">
+          <strong>研究關鍵字：</strong><br>
+          永磁式線性同步馬達、H∞控制、無感測驅動系統、機械手臂
+        </p>
+      </article>
+      <article class="card equipment-group">
+        <h3>👨 蔣同學</h3>
+        <p class="equipment-keywords">
+          <strong>研究關鍵字：</strong><br>
+          力回饋系統、PMSM控制、無感測器控制、力矩估測、LoRa無線通訊、數位訊號處理器
+        </p>
+      </article>
+      <article class="card equipment-group">
+        <h3>👨 蘇同學</h3>
+        <p class="equipment-keywords">
+          <strong>研究關鍵字：</strong><br>
+          FPGA、直流馬達驅動器、長短期記憶網路、電池管理系統、有限元素分析
+        </p>
+      </article>     
+      <article class="card equipment-group">
+        <h3>👩 陳同學</h3>
+        <p class="equipment-keywords">
+          <strong>研究關鍵字：</strong><br>
+          內藏式永磁同步馬達驅動器、故障診斷、頻域特徵、快速傅立葉轉換
+        </p>
+      </article> 
+      <article class="card equipment-group">
+        <h3>👨 吳同學</h3>
+        <p class="equipment-keywords">
+          <strong>研究關鍵字：</strong><br>
+          自主移動機器人、導航、路徑規劃、隨機森林演算法
+        </p>
+      </article>
+      <article class="card equipment-group">
+        <h3>🌍 張同學</h3>
+        <p class="equipment-keywords">
+          <strong>研究關鍵字：</strong><br>
+          馬達驅動、控制器設計、永磁式線性同步馬達、DSP、PID
+        </p>
+      </article> 
+      <article class="card equipment-group">
+        <h3>👨 杜同學</h3>
+        <p class="equipment-keywords">
+          <strong>研究關鍵字：</strong><br>
+          無人車、無刷直流馬達控制、AI、路徑規劃、控制演算法、機電整合控制、麥克拉姆輪
+        </p>
+      </article>
+      <article class="card equipment-group">
+        <h3>👨 李同學</h3>
+        <p class="equipment-keywords">
+          <strong>研究關鍵字：</strong><br>
+          火箭回收、降落傘設計、模擬、HIL、六自由度
+        </p>
+      </article>       
+      <article class="card equipment-group">
+        <h3>👨 黎同學</h3>
+        <p class="equipment-keywords">
+          <strong>研究關鍵字：</strong><br>
+          馬達驅動器、雙軸力回饋系統、控制演算法、遠距離無線通訊、數位訊號處理器
+        </p>
+      </article> 
+      <article class="card equipment-group">
+        <h3>👨 蘇同學</h3>
+        <p class="equipment-keywords">
           <strong>研究關鍵字：</strong><br>
           電動載具、SOC、SOH、RUL、儲能系統、FPGA
         </p>
